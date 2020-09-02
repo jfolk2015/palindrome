@@ -29,15 +29,6 @@ public class Palindrome {
     }
 
     private static String makePalindrome(String string) {
-        String attemptedPalindrome = attemptComplexPalindrome(string);
-        if(attemptedPalindrome == null) {
-            return makeSimplePalindrome(string);
-        } else {
-            return attemptedPalindrome;
-        }
-    }
-
-    private static String attemptComplexPalindrome(String string) {
         for(int index = endOf(string); index >= 0; index--) {
             String firstPart = string.substring(0, index);
             String secondPart = string.substring(index);
@@ -58,20 +49,6 @@ public class Palindrome {
                 .append(firstPart)
                 .append(secondPart)
                 .toString();
-    }
-
-    private static String makeSimplePalindrome(String string) {
-        if(hasOddLength(string)) {
-            return makeSimpleOddPalindrome(string);
-        } else {
-            return makePalindromeFromParts("", string);
-        }
-    }
-
-    private static String makeSimpleOddPalindrome(String string) {
-        String firstLetter = string.substring(0, 1);
-        String remainingLetters = string.substring(1);
-        return makePalindromeFromParts(firstLetter, remainingLetters);
     }
 
     private static boolean hasOddLength(String string) {

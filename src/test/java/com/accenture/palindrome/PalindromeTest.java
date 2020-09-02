@@ -13,9 +13,15 @@ public class PalindromeTest {
     }
 
     @Test
-    void double_and_reverse_string() {
+    void odd_length_string_uses_first_digit_as_middle_of_palindrome() {
         String palindrome = Palindrome.from("12345");
         assertThat(palindrome).isEqualTo("543212345");
+    }
+
+    @Test
+    void even_length_string_uses_first_digit_as_middle_of_palindrome() {
+        String palindrome = Palindrome.from("1234");
+        assertThat(palindrome).isEqualTo("4321234");
     }
 
     @Test
