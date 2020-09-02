@@ -7,19 +7,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PalindromeTest {
 
     @Test
-    void a_becomes_aa() {
+    void single_letters_are_returned_unchanged() {
         String palindrome = Palindrome.from("a");
-        assertThat(palindrome).isEqualTo("aa");
+        assertThat(palindrome).isEqualTo("a");
     }
 
     @Test
     void double_and_reverse_string() {
         String palindrome = Palindrome.from("12345");
-        assertThat(palindrome).isEqualTo("5432112345");
+        assertThat(palindrome).isEqualTo("543212345");
     }
 
     @Test
-    void existing_palindromes_remain_the_same() {
+    void existing_palindromes_are_returned_unchanged() {
         String palindrome = Palindrome.from("cc");
         assertThat(palindrome).isEqualTo("cc");
     }
@@ -47,4 +47,9 @@ public class PalindromeTest {
         assertThat(palindrome).isEqualTo("cddc");
     }
 
+    @Test
+    void cjc_remains_the_same() {
+        String palindrome = Palindrome.from("cjc");
+        assertThat(palindrome).isEqualTo("cjc");
+    }
 }
