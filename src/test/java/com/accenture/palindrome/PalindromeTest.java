@@ -34,4 +34,10 @@ public class PalindromeTest {
     void null_remains_null() {
         assertThat(Palindrome.from(null)).isNull();
     }
+
+    @Test
+    void ccdc_becomes_cdccdc() {
+        String palindrome = Palindrome.from("ccdc");
+        assertThat(palindrome).isEqualTo("cdccdc");
+    }
 }
