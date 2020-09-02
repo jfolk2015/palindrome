@@ -11,4 +11,10 @@ public class PalindromeTest {
         String palindrome = Palindrome.from("a");
         assertThat(palindrome).isEqualTo("aa");
     }
+
+    @Test
+    public void double_and_reverse_string() {
+        String palindrome = Palindrome.from("12345");
+        assertThat(palindrome).isEqualTo("5432112345");
+    }
 }
