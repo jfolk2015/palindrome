@@ -38,22 +38,18 @@ public class Palindrome {
     }
 
     private static String attemptComplexPalindrome(String string) {
-        for(int index = 1; index < string.length(); index++) {
+        for(int index = endOf(string); index >= 0; index--) {
             String firstPart = string.substring(0, index);
             String secondPart = string.substring(index);
-            if(areHalvesMirrored(firstPart)) {
+            if(alreadyPalindrome(firstPart)) {
                 return makePalindromeFromParts(firstPart, secondPart);
             }
         }
         return null;
     }
 
-    private static boolean areHalvesMirrored(String string) {
-        int midPoint = string.length() / 2;
-        String firstHalf = string.substring(0, midPoint);
-        String secondHalf = string.substring(midPoint);
-        String reversedSecondHalf = new StringBuilder(secondHalf).reverse().toString();
-        return firstHalf.equals(reversedSecondHalf);
+    private static int endOf(String string) {
+        return string.length() - 1;
     }
 
     private static String makePalindromeFromParts(String firstPart, String secondPart) {

@@ -52,4 +52,10 @@ public class PalindromeTest {
         String palindrome = Palindrome.from("cjc");
         assertThat(palindrome).isEqualTo("cjc");
     }
+
+    @Test
+    void ejedc_becomes_cdejedc() {
+        String palindrome = Palindrome.from("ejedc");
+        assertThat(palindrome).isEqualTo("cdejedc");
+    }
 }
