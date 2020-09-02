@@ -17,4 +17,10 @@ public class PalindromeTest {
         String palindrome = Palindrome.from("12345");
         assertThat(palindrome).isEqualTo("5432112345");
     }
+
+    @Test
+    void existing_palindromes_remain_the_same() {
+        String palindrome = Palindrome.from("cc");
+        assertThat(palindrome).isEqualTo("cc");
+    }
 }
