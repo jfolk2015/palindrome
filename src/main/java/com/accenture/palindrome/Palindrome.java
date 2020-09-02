@@ -21,15 +21,18 @@ public class Palindrome {
     }
 
     private static String makePalindrome(String string) {
-        int midPoint = string.length() / 2;
-        String firstHalf = string.substring(0, midPoint);
-        String secondHalf = string.substring(midPoint);
-        if(alreadyPalindrome(firstHalf)) {
-            return new StringBuilder(secondHalf)
-                    .reverse()
-                    .append(firstHalf)
-                    .append(secondHalf)
-                    .toString();
+
+        for(int index = 1; index < string.length(); index++) {
+            String firstPart = string.substring(0, index);
+            String secondPart = string.substring(index);
+            if(alreadyPalindrome(firstPart)) {
+                return new StringBuilder(secondPart)
+                        .reverse()
+                        .append(firstPart)
+                        .append(secondPart)
+                        .toString();
+            }
+
         }
 
         return new StringBuilder(string)
