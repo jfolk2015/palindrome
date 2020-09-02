@@ -64,4 +64,10 @@ public class PalindromeTest {
         String palindrome = Palindrome.from("ejedc");
         assertThat(palindrome).isEqualTo("cdejedc");
     }
+
+    @Test
+    void capitals_are_considered_different_from_lower_case_letters() {
+        String palindrome = Palindrome.from("Eve");
+        assertThat(palindrome).isEqualTo("evEve");
+    }
 }

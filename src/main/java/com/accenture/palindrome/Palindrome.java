@@ -28,12 +28,16 @@ public class Palindrome {
         }
     }
 
+    private static boolean hasOddLength(String string) {
+        return string.length() % 2 == 1;
+    }
+
     private static String makePalindrome(String string) {
         for(int index = endOf(string); index >= 0; index--) {
             String firstPart = string.substring(0, index);
             String secondPart = string.substring(index);
             if(alreadyPalindrome(firstPart)) {
-                return makePalindromeFromParts(firstPart, secondPart);
+                return buildPalindromeFromParts(firstPart, secondPart);
             }
         }
         return null;
@@ -43,16 +47,12 @@ public class Palindrome {
         return string.length() - 1;
     }
 
-    private static String makePalindromeFromParts(String firstPart, String secondPart) {
+    private static String buildPalindromeFromParts(String firstPart, String secondPart) {
         return new StringBuilder(secondPart)
                 .reverse()
                 .append(firstPart)
                 .append(secondPart)
                 .toString();
-    }
-
-    private static boolean hasOddLength(String string) {
-        return string.length() % 2 == 1;
     }
 
 }
