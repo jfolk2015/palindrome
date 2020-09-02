@@ -29,4 +29,9 @@ public class PalindromeTest {
         String palindrome = Palindrome.from("");
         assertThat(palindrome).isEqualTo("");
     }
+
+    @Test
+    void null_remains_null() {
+        assertThat(Palindrome.from(null)).isNull();
+    }
 }

@@ -3,6 +3,9 @@ package com.accenture.palindrome;
 public class Palindrome {
 
     public static String from(String string) {
+        if(string == null) {
+            return null;
+        }
         if(alreadyPalindrome(string)) {
             return string;
         }
